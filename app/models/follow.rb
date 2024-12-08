@@ -11,4 +11,13 @@ class Follow < ApplicationRecord
              inverse_of: :follower_relationships
 
   validates :follower_id, uniqueness: { scope: :followee_id }
+  validate :follower_and_followee_are_different
+
+  private
+
+  def follower_and_followee_are_different
+    return unless follower_id == followee_id
+
+    errors.add(:followee, 'must be different from follower')
+  end
 end

@@ -17,6 +17,12 @@ module SleepRecordService
 
     def update_sleep_record!(user)
       latest_sleep_record = user.sleep_records.order(:created_at).last
+
+      unless latest_sleep_record
+        raise Exceptions::GeneralError.new(I18n.t('exceptions.not_found', context: 'Sleep Record'), :not_found,
+                                           404)
+      end
+
       latest_sleep_record.update!(clock_out: Time.current)
       latest_sleep_record
     end

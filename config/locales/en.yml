@@ -28,4 +28,6 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  exceptions:
+    not_found: "%{context} not found"
+    unprocessable_entity: "Unprocessable Entity of %{record}"

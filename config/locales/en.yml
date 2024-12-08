@@ -31,3 +31,13 @@ en:
   exceptions:
     not_found: "%{context} not found"
     unprocessable_entity: "Unprocessable Entity of %{record}"
+    invalid_auth: "Invalid credentials"
+    too_many_requests: "Too many requests"
+    expired_password_reset: "Password reset link is invalid or has expired."
+    password_invalid: "Passwords did not match"
+    general:
+      unauthorized: "Unauthorized"
+  auth:
+    password_reset_mailer: "Reset your password"
+    password_reset_instruction: "Password reset instructions sent (if the user exists)."
+    password_reset_success: "Password reset successfully."

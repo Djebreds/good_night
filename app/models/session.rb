@@ -4,7 +4,7 @@
 class Session < ApplicationRecord
   belongs_to :user
 
-  before_create :generate_token
+  before_save :generate_token
 
   def regenerate_token!
     if frozen?
@@ -18,6 +18,6 @@ class Session < ApplicationRecord
   private
 
   def generate_token
-    self.token ||= SecureRandom.hex(32)
+    self.token = SecureRandom.hex(32)
   end
 end

@@ -41,3 +41,6 @@ en:
     password_reset_mailer: "Reset your password"
     password_reset_instruction: "Password reset instructions sent (if the user exists)."
     password_reset_success: "Password reset successfully."
+  sleep_record:
+    record_not_completed: "Record not completed"
+    must_after_clock_in: "must be after clock_in"

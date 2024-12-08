@@ -23,6 +23,6 @@ class SleepRecord < ApplicationRecord
   def clock_out_after_clock_in
     return if clock_out.blank? || clock_out > clock_in
 
-    errors.add(:clock_out, 'must be after clock_in')
+    errors.add(:clock_out, I18n.t('sleep_record.must_after_clock_in'))
   end
 end

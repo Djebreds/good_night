@@ -2,7 +2,7 @@
 
 module Exceptions
   class GeneralError < GoodNightError
-    def initialize(message, status, code = '400')
+    def initialize(message, status, code = 400)
       @message = message
       @status = status
       @code = code

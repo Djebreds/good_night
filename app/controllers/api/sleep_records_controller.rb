@@ -16,5 +16,11 @@ module Api
 
       render :clock_in, status: :created
     end
+
+    def clock_out
+      @sleep_record = SleepRecordService::UpdateClockOut.call(Current.user)
+
+      render :clock_out, status: :ok
+    end
   end
 end

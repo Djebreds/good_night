@@ -10,5 +10,5 @@ class Follow < ApplicationRecord
              class_name: 'User',
              inverse_of: :follower_relationships
 
-  validates :follower_id, uniqueness: { scope: :followed_id }
+  validates :follower_id, uniqueness: { scope: :followee_id }
 end

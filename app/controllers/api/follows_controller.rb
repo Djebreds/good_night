@@ -6,13 +6,13 @@ module Api
     before_action :require_authentication
     before_action :find_user, only: %i[create destroy]
 
-    # GET /api/followers
+    # GET /api/users/followers
     def follower
       @followers = Current.user.followees
       render :follower, status: :ok
     end
 
-    # GET /api/followees
+    # GET /api/users/followees
     def followee
       @followees = Current.user.followers
 

@@ -12,18 +12,20 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :session
     resources :passwords, param: :token
-    resources :sleep_records, only: [:index] do
-      collection do
-        post :clock_in
-        put :clock_out
-      end
-    end
     resources :users, only: [] do
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'
     end
-    get 'followers', to: 'follows#follower'
-    get 'followees', to: 'follows#followee'
-    get 'following_sleep_records', to: 'sleep_records#following_sleep_record'
+    scope :users do
+      resources :sleep_records, only: [:index] do
+        collection do
+          post :clock_in
+          put :clock_out
+        end
+      end
+      get 'following/sleep_records', to: 'sleep_records#following_sleep_record'
+      get 'followers', to: 'follows#follower'
+      get 'followees', to: 'follows#followee'
+    end
   end
 end

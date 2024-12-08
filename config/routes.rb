@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: [] do
       post 'follow', to: 'follows#create'
+      delete 'unfollow', to: 'follows#destroy'
     end
   end
 end

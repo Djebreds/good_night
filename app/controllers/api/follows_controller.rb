@@ -13,6 +13,13 @@ module Api
       render :create, status: :created
     end
 
+    # DELETE /api/users/:user_id/unfollow
+    def destroy
+      Current.user.followees.delete(@user)
+
+      head :no_content
+    end
+
     private
 
     def find_user

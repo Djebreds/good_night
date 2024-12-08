@@ -3,6 +3,8 @@
 # Represents a user from the application
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :sleep_records, dependent: :destroy
   has_many :sessions, dependent: :destroy
   has_many :follower_relationships,
            class_name: 'Follow',

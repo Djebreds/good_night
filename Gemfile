@@ -46,6 +46,12 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
+
+  # RSpec for Rails
+  gem 'rspec-rails'
+
+  # Provides integration between factory_bot and rails 5.0 or newer
+  gem 'factory_bot_rails'
 end
 
 group :development do

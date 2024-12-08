@@ -2,12 +2,10 @@
 
 # Base class for service
 class ApplicationService
-  delete :t, to: :I18n
+  delegate :t, to: :I18n
 
   def self.call(*)
-    instance = new(*)
-    instance.call
-    instance
+    new(*).call
   end
 
   # return value should be ignored

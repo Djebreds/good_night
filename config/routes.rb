@@ -18,5 +18,8 @@ Rails.application.routes.draw do
         put :clock_out
       end
     end
+    resources :users, only: [] do
+      post 'follow', to: 'follows#create'
+    end
   end
 end

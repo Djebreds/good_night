@@ -22,5 +22,12 @@ module Api
 
       render :clock_out, status: :ok
     end
+
+    # GET /api/following_sleep_records
+    def following_sleep_record
+      @records = SleepRecordService::FollowingSleepRecord.call(Current.user)
+
+      render :following_sleep_record, status: :ok
+    end
   end
 end

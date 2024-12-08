@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     end
     get 'followers', to: 'follows#follower'
     get 'followees', to: 'follows#followee'
+    get 'following_sleep_records', to: 'sleep_records#following_sleep_record'
   end
 end

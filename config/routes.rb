@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :session
     resources :passwords, param: :token
+    resources :sleep_records, only: [] do
+      collection do
+        post :clock_in
+      end
+    end
   end
 end

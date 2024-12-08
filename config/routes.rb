@@ -23,5 +23,6 @@ Rails.application.routes.draw do
       delete 'unfollow', to: 'follows#destroy'
     end
     get 'followers', to: 'follows#follower'
+    get 'followees', to: 'follows#followee'
   end
 end

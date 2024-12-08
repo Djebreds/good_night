@@ -12,6 +12,13 @@ module Api
       render :follower, status: :ok
     end
 
+    # GET /api/followees
+    def followee
+      @followees = Current.user.followers
+
+      render :followee, status: :ok
+    end
+
     # POST /api/users/:user_id/follow
     def create
       Current.user.followees << @user
